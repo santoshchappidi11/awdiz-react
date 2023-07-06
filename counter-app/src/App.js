@@ -17,6 +17,11 @@ import Map from "./components/01-07-23/Map";
 import Wrapper from "./components/01-07-23/Wrapper";
 import StyledComponent from "./components/01-07-23/StyledComponent";
 import { useState } from "react";
+import AllProducts2 from "./components/01-07-23/AllProducts2";
+import SingleProduct2 from "./components/01-07-23/SingleProduct2";
+import DynamicStyles from "./components/04-07-23/DynamicStyles";
+import DynamicClasses from "./components/04-07-23/DynamicClasses";
+import ChildrenProps from "./components/04-07-23/ChildrenProps";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -25,6 +30,11 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="/children-props" element={<ChildrenProps />} />
+        <Route exact path="/dynamic-classes" element={<DynamicClasses />} />
+        <Route exact path="/dynamic-styles" element={<DynamicStyles />} />
+        <Route exact path="/all-products2" element={<AllProducts2 />} />
+        <Route exact path="/single-product2/:id" element={<SingleProduct2 />} />
         <Route exact path="/styled-components" element={<StyledComponent />} />
         <Route exact path="/wrapper" element={<Wrapper />} />
         <Route
