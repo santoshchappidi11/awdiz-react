@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -16,12 +17,16 @@ import DeclarativeWay from "./components/01-07-23/DeclarativeWay";
 import Map from "./components/01-07-23/Map";
 import Wrapper from "./components/01-07-23/Wrapper";
 import StyledComponent from "./components/01-07-23/StyledComponent";
-import { useState } from "react";
 import AllProducts2 from "./components/01-07-23/AllProducts2";
 import SingleProduct2 from "./components/01-07-23/SingleProduct2";
 import DynamicStyles from "./components/04-07-23/DynamicStyles";
 import DynamicClasses from "./components/04-07-23/DynamicClasses";
 import ChildrenProps from "./components/04-07-23/ChildrenProps";
+import FormOne from "./components/06-07-23/FormOne";
+import FormSingleState from "./components/08-07-23/FormSingleState";
+import RenderTodos from "./components/08-07-23/RenderTodos";
+import UseMemo from "./components/09-07-23/UseMemo";
+import UseReducer from "./components/09-07-23/UseReducer";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -30,6 +35,11 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="use-reducer" element={<UseReducer />} />
+        <Route exact path="/use-memo" element={<UseMemo />} />
+        <Route exact path="/render-todos" element={<RenderTodos />} />
+        <Route exact path="/form-single-state" element={<FormSingleState />} />
+        <Route exact path="/form-one" element={<FormOne />} />
         <Route exact path="/children-props" element={<ChildrenProps />} />
         <Route exact path="/dynamic-classes" element={<DynamicClasses />} />
         <Route exact path="/dynamic-styles" element={<DynamicStyles />} />

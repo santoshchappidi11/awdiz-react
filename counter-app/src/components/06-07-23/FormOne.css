@@ -1,0 +1,28 @@
+#form {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+#form > form > label {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#form > form > input {
+  height: 28px;
+  width: 250px;
+  margin-bottom: 14px;
+}
+
+#form > form > input::placeholder {
+  font-size: 15px;
+}
+
+#form > form > button {
+  height: 35px;
+  width: 100px;
+  font-size: 15px;
+  cursor: pointer;
+}
