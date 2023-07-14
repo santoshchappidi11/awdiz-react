@@ -27,6 +27,8 @@ import FormSingleState from "./components/08-07-23/FormSingleState";
 import RenderTodos from "./components/08-07-23/RenderTodos";
 import UseMemo from "./components/09-07-23/UseMemo";
 import UseReducer from "./components/09-07-23/UseReducer";
+import BackendProducts from "./components/11-07-23/BackendProducts";
+import BackendSingleProduct from "./components/11-07-23/BackendSingleProduct";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -35,7 +37,13 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route exact path="use-reducer" element={<UseReducer />} />
+        <Route
+          exact
+          path="/backend-single-product/:id"
+          element={<BackendSingleProduct />}
+        />
+        <Route exact path="/backend-products" element={<BackendProducts />} />
+        <Route exact path="/use-reducer" element={<UseReducer />} />
         <Route exact path="/use-memo" element={<UseMemo />} />
         <Route exact path="/render-todos" element={<RenderTodos />} />
         <Route exact path="/form-single-state" element={<FormSingleState />} />
