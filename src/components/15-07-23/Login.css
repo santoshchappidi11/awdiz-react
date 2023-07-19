@@ -1,0 +1,72 @@
+#login {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 0;
+  /* border: 1px solid black; */
+}
+
+#login > form {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  border-radius: 5px;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+#login > form > .fields {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid blue; */
+}
+
+#login > form > .fields > label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#login > form > .fields > input {
+  height: 38px;
+  width: 70%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 5px;
+}
+
+#login > form > button {
+  border: none;
+  background: none;
+  border-radius: 5px;
+  height: 34px;
+  width: 145px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: orangered;
+  color: white;
+  /* border: 1px solid grey; */
+}
+
+#login > form > .register-here {
+  margin-top: 15px;
+  /* border: 1px solid black; */
+}
+
+#login > form > .register-here > p {
+  font-size: 13px;
+}
+
+#login > form > .register-here > p > span {
+  font-weight: 600;
+  color: orangered;
+  cursor: pointer;
+}

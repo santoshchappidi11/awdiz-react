@@ -1,0 +1,28 @@
+#home {
+  height: 200px;
+  width: 80%;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+
+#home > h3 {
+  font-size: 25px;
+}
+
+#home > button {
+  height: 40px;
+  width: 180px;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: orangered;
+  color: white;
+  margin: 10px 0;
+}
