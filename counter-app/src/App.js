@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Welcome from "./components/Welcome";
 import Counter from "./components/Counter";
-import Login from "./components/Login";
 import Type1useEffect from "./components/Type-1-UseEffect";
 import Type2useEffect from "./components/Type-2-UseEffect";
 import Type3UseEffect from "./components/Type-3-UseEffect";
@@ -29,6 +28,9 @@ import UseMemo from "./components/09-07-23/UseMemo";
 import UseReducer from "./components/09-07-23/UseReducer";
 import BackendProducts from "./components/11-07-23/BackendProducts";
 import BackendSingleProduct from "./components/11-07-23/BackendSingleProduct";
+import Register from "./components/15-07-23/Register";
+import Login from "./components/15-07-23/Login";
+import Cart from "./components/Cart";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -37,6 +39,9 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/Register" element={<Register />} />
         <Route
           exact
           path="/backend-single-product/:id"
@@ -79,7 +84,6 @@ function App() {
         <Route exact path="/type-3-useeffect" element={<Type3UseEffect />} />
         <Route exact path="/type-4-useeffect" element={<Type4UseEffect />} />
         <Route exact path="/counter" element={<Counter />} />
-        <Route exact path="/login" element={<Login />} />
         <Route exact path="/welcome" element={<Welcome />} />
         <Route exact path="/home" element={<Home />} />
       </Routes>

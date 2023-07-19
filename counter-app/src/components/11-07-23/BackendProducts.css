@@ -23,17 +23,20 @@
   width: 90%;
   height: auto;
   margin: auto;
+  margin-top: 80px;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
+  padding: 25px 0;
+  /* border: 1px solid black; */
 }
 
 #all-products > .product {
   height: auto;
-  width: 22%;
+  width: 20%;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 15px 5px;
   cursor: pointer;
   background-color: rgb(255, 248, 246);
   border: 1px solid rgb(194, 194, 194);

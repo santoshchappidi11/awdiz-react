@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./BackendSingleProduct.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const BackendSingleProduct = () => {
+  const [isUserLoggeIn, setIsUserLoggedIn] = useState(false);
+  const [currentUserEmail, setCurrentUserEmail] = useState();
   const [products, setProducts] = useState([]);
   const [singleProd, setSingleProd] = useState({});
   const { id } = useParams();
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -23,10 +26,38 @@ const BackendSingleProduct = () => {
   useEffect(() => {
     if (products.length && id) {
       const result = products.find((prod) => prod.id == id);
-      console.log(result);
       setSingleProd(result);
     }
   }, [id, products]);
+
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("current-user"));
+    if (currentUser) {
+      setIsUserLoggedIn(true);
+      setCurrentUserEmail(currentUser.email);
+    }
+  }, []);
+
+  function addToCart() {
+    const allUsers = JSON.parse(localStorage.getItem("users"));
+    console.log(allUsers);
+    console.log(currentUserEmail);
+
+    if (isUserLoggeIn) {
+      for (let i = 0; i <= allUsers.length; i++) {
+        if (allUsers[i].email == currentUserEmail) {
+          allUsers[i].cart.push(singleProd);
+          allUsers[i].cart_count = allUsers[i].cart.length;
+          localStorage.setItem("users", JSON.stringify(allUsers));
+          break;
+        }
+      }
+      alert("Product added to your cart! ");
+    } else {
+      alert("Please Login To add the product!");
+      navigateTo("/login");
+    }
+  }
 
   return (
     <div id="single-product">
@@ -57,6 +88,9 @@ const BackendSingleProduct = () => {
             <h2>
               Category : <span>{singleProd.category}</span>
             </h2>
+            <div className="cart-button">
+              <button onClick={addToCart}>Add to cart</button>
+            </div>
           </div>
         </>
       )}
