@@ -25,7 +25,7 @@ function Navbar() {
         }
       }
     }
-  }, []);
+  });
 
   function logout() {
     setIsUserLoggedIn(false);
@@ -49,10 +49,10 @@ function Navbar() {
             </div>
             <div id="nav-cart" onClick={() => navigateTo("/cart")}>
               <h3>Cart</h3>
-              {/* <span>{user.cart_count}</span> */}
+              <span>{user.cart.length}</span>
             </div>
             <div id="user-name">
-              {/* <h4>Hi {user.name}</h4> */}
+              <h4>Hi {user.name.toUpperCase()}</h4>
             </div>
           </>
         )}

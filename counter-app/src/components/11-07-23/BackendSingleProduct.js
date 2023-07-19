@@ -40,14 +40,11 @@ const BackendSingleProduct = () => {
 
   function addToCart() {
     const allUsers = JSON.parse(localStorage.getItem("users"));
-    console.log(allUsers);
-    console.log(currentUserEmail);
 
     if (isUserLoggeIn) {
       for (let i = 0; i <= allUsers.length; i++) {
         if (allUsers[i].email == currentUserEmail) {
           allUsers[i].cart.push(singleProd);
-          allUsers[i].cart_count = allUsers[i].cart.length;
           localStorage.setItem("users", JSON.stringify(allUsers));
           break;
         }

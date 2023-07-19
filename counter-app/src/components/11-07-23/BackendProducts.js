@@ -42,7 +42,6 @@ const BackendProducts = () => {
               </div>
               <h2>{singleProduct.title}</h2>
               <h3>₹ {singleProduct.price}</h3>
-              {/* <p>{singleProduct.description}</p> */}
               <div className="rating-count">
                 <div className="rating">
                   <span>{singleProduct.rating.rate}</span>

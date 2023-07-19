@@ -25,7 +25,6 @@ const Register = () => {
         email: userDetails.email,
         password: userDetails.password,
         cart: [],
-        cart_count: 0,
       };
 
       usersData.push(userSingleObject);
