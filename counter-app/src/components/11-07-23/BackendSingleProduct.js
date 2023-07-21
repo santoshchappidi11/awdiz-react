@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./BackendSingleProduct.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../context/Auth.context";
 
 const BackendSingleProduct = () => {
   const [isUserLoggeIn, setIsUserLoggedIn] = useState(false);
@@ -9,6 +10,7 @@ const BackendSingleProduct = () => {
   const [singleProd, setSingleProd] = useState({});
   const { id } = useParams();
   const navigateTo = useNavigate();
+  const { productAdded } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -44,7 +46,8 @@ const BackendSingleProduct = () => {
     if (isUserLoggeIn) {
       for (let i = 0; i <= allUsers.length; i++) {
         if (allUsers[i].email == currentUserEmail) {
-          allUsers[i].cart.push(singleProd);
+          allUsers[i].cart?.push(singleProd);
+          productAdded(allUsers[i]);
           localStorage.setItem("users", JSON.stringify(allUsers));
           break;
         }

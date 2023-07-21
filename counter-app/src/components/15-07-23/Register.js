@@ -7,6 +7,7 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
+    // cart: [],
   });
 
   const navigateTo = useNavigate();
@@ -20,6 +21,20 @@ const Register = () => {
 
     if (userDetails.name && userDetails.email && userDetails.password) {
       const usersData = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (usersData.length) {
+        for (let i = 0; i < usersData.length; i++) {
+          if (userDetails.email == usersData[i].email) {
+            setUserDetails({
+              name: "",
+              email: "",
+              password: "",
+            });
+            return alert("This email already exists, please try another!");
+          }
+        }
+      }
+
       const userSingleObject = {
         name: userDetails.name,
         email: userDetails.email,

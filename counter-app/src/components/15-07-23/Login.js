@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/Auth.context";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState({ email: "", password: "" });
   const navigateTo = useNavigate();
 
@@ -25,7 +27,8 @@ const Login = () => {
           flag = true;
           alert("Logged In Sucessfully!");
           navigateTo("/home");
-          localStorage.setItem("current-user", JSON.stringify(userDetails));
+          login(userDetails);
+          // localStorage.setItem("current-user", JSON.stringify(userDetails));
         }
       }
 

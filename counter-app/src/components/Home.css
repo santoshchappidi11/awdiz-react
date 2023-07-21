@@ -15,8 +15,9 @@
 }
 
 #home > button {
-  height: 40px;
-  width: 180px;
+  /* height: 40px;
+  width: 180px; */
+  padding: 5px 20px;
   border: none;
   background: none;
   border-radius: 5px;
@@ -25,4 +26,5 @@
   background-color: orangered;
   color: white;
   margin: 10px 0;
+  cursor: pointer;
 }
