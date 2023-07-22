@@ -1,0 +1,57 @@
+#profile-main {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 0;
+  /* border: 1px solid black; */
+}
+
+#profile-main > form {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  border-radius: 5px;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+#profile-main > form > .fields {
+  width: 78%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid blue; */
+}
+
+#profile-main > form > .fields > label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#profile-main > form > .fields > input {
+  height: 38px;
+  width: 65%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 5px;
+}
+
+#profile-main > form > button {
+  border: none;
+  background: none;
+  border-radius: 5px;
+  height: 34px;
+  width: 145px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: orangered;
+  color: white;
+  /* border: 1px solid grey; */
+}

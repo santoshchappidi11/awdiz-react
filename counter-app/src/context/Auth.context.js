@@ -6,6 +6,7 @@ const initialState = {
   user: null,
   prodAdded: null,
   prodRemoved: null,
+  cartCleared: null,
 };
 
 const reducer = (state, action) => {
@@ -18,6 +19,8 @@ const reducer = (state, action) => {
       return { ...state, prodAdded: action.payload };
     case "REMOVE_FROM_CART":
       return { ...state, prodRemoved: action.payload };
+    case "CLEAR_CART":
+      return { ...state, cartCleared: action.payload };
     default:
       return state;
   }
@@ -56,6 +59,13 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const cartCleared = (user) => {
+    dispatch({
+      type: "CLEAR_CART",
+      payload: user.cart,
+    });
+  };
+
   useEffect(() => {
     const currentUseLoggedIn =
       JSON.parse(localStorage.getItem("current-user")) || [];
@@ -70,7 +80,14 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ login, logout, state, productAdded, productRemoved }}
+      value={{
+        login,
+        logout,
+        state,
+        productAdded,
+        productRemoved,
+        cartCleared,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -71,7 +71,7 @@ const BackendSingleProduct = () => {
 
           <div className="right">
             <h3>{singleProd.title}</h3>
-            <h4>₹{singleProd.price}</h4>
+            <h4>${singleProd.price}</h4>
             {singleProd.rating && (
               <div className="rating-count">
                 <div className="rating">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 import "./BackendProducts.css";
 
 const BackendProducts = () => {
@@ -9,9 +9,13 @@ const BackendProducts = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const data = await fetch("https://fakestoreapi.com/products");
-      const result = await data.json();
-      setProducts(result);
+      const result = await axios.get("https://fakestoreapi.com/products");
+      setProducts(result.data);
+      // console.log(response.data);
+
+      // const data = await fetch("https://fakestoreapi.com/products");
+      // const result = await data.json();
+      // setProducts(result);
     }
 
     fetchProducts();
@@ -41,7 +45,7 @@ const BackendProducts = () => {
                 <img src={singleProduct.image} alt="product" />
               </div>
               <h2>{singleProduct.title}</h2>
-              <h3>₹ {singleProduct.price}</h3>
+              <h3>${singleProduct.price}</h3>
               <div className="rating-count">
                 <div className="rating">
                   <span>{singleProduct.rating.rate}</span>

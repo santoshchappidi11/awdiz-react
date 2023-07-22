@@ -33,7 +33,7 @@ function Navbar() {
         }
       }
     }
-  }, [state.user, state.prodAdded, state.prodRemoved]);
+  }, [state.user, state.prodAdded, state.prodRemoved, state.cartCleared]);
 
   // function logout() {
   //   setIsUserLoggedIn(false);
@@ -53,7 +53,7 @@ function Navbar() {
         {isUserLoggedIn && (
           <>
             <div id="profile">
-              <h3>Profile</h3>
+              <h3 onClick={() => navigateTo("/profile")}>Profile</h3>
             </div>
             <div id="nav-cart" onClick={() => navigateTo("/cart")}>
               <h3>Cart</h3>

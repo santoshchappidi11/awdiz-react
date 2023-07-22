@@ -31,6 +31,7 @@ import BackendSingleProduct from "./components/11-07-23/BackendSingleProduct";
 import Register from "./components/15-07-23/Register";
 import Login from "./components/15-07-23/Login";
 import Cart from "./components/Cart";
+import Profile from "./components/19-07-23/Profile";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -39,6 +40,7 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/Register" element={<Register />} />
