@@ -8,6 +8,17 @@
   /* border: 1px solid black; */
 }
 
+#profile-main > form > #profile-header {
+  margin-bottom: 18px;
+  /* border: 1px solid black; */
+}
+
+#profile-main > form > #profile-header h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(49, 49, 49);
+}
+
 #profile-main > form {
   width: 50%;
   display: flex;

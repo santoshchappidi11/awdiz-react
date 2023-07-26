@@ -61,6 +61,9 @@ const Register = () => {
   return (
     <div id="register">
       <form onSubmit={SubmitTheUserDetails}>
+        <div id="register-header">
+          <h3>Register</h3>
+        </div>
         <div className="fields">
           <label>Username:</label>
           <input

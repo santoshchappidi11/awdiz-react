@@ -19,7 +19,7 @@
 
 #cart-screen > #cart-products > .cart-product {
   height: auto;
-  width: 22%;
+  width: 30%;
   margin: 10px 14px;
   border-radius: 5px;
   border: 1px solid rgb(199, 199, 199);
@@ -121,6 +121,11 @@
   align-items: center;
   padding: 8px 0;
   border-top: 1px solid rgb(255, 177, 148);
+}
+
+#cart-screen > #cart-products-total > .buy > h2 {
+  font-weight: 600;
+  color: rgb(56, 56, 56);
 }
 
 #cart-screen > #cart-products-total > .buy > button {

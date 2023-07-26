@@ -29,13 +29,13 @@ const reducer = (state, action) => {
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const login = (userDetails) => {
+  function login(userDetails) {
     localStorage.setItem("current-user", JSON.stringify(userDetails));
     dispatch({
       type: "LOGIN",
       payload: userDetails,
     });
-  };
+  }
 
   const logout = () => {
     localStorage.removeItem("current-user");

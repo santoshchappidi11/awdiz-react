@@ -40,7 +40,7 @@ const BackendSingleProduct = () => {
     }
   }, []);
 
-  function addToCart() {
+  function addToCart(singleProdID) {
     const allUsers = JSON.parse(localStorage.getItem("users"));
 
     if (isUserLoggeIn) {
@@ -89,7 +89,9 @@ const BackendSingleProduct = () => {
               Category : <span>{singleProd.category}</span>
             </h2>
             <div className="cart-button">
-              <button onClick={addToCart}>Add to cart</button>
+              <button onClick={() => addToCart(singleProd.id)}>
+                Add to cart
+              </button>
             </div>
           </div>
         </>

@@ -12,7 +12,7 @@ const Login = () => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
   }
 
-  function submitTheUserDetails(e) {
+  function handleLoginSubmit(e) {
     e.preventDefault();
 
     if (userDetails.email && userDetails.password) {
@@ -43,7 +43,10 @@ const Login = () => {
 
   return (
     <div id="login">
-      <form onSubmit={submitTheUserDetails}>
+      <form onSubmit={handleLoginSubmit}>
+        <div id="login-header">
+          <h3>Login</h3>
+        </div>
         <div className="fields">
           <label>Email:</label>
           <input

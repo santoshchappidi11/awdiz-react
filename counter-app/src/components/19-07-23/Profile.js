@@ -68,6 +68,9 @@ const Profile = () => {
   return (
     <div id="profile-main">
       <form onSubmit={submitTheUserDetails}>
+      <div id="profile-header">
+          <h3>Profile</h3>
+        </div>
         <div className="fields">
           <label>Change Name:</label>
           <input

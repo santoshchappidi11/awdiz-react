@@ -138,7 +138,7 @@ const Cart = () => {
             <h2>
               Total <span>{Math.round(isTotalPrice) / 2} $</span>
             </h2>
-            <button onClick={removeCartProds}>Buy</button>
+            <button onClick={removeCartProds}>Checkout</button>
           </div>
         </div>
       )}
