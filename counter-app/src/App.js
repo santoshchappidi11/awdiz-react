@@ -32,6 +32,8 @@ import Register from "./components/15-07-23/Register";
 import Login from "./components/15-07-23/Login";
 import Cart from "./components/Cart";
 import Profile from "./components/19-07-23/Profile";
+import UseRefHook1 from "./components/30-07-23/UseRefHook1";
+import UseRefHook2 from "./components/30-07-23/UseRefHook2";
 
 function App() {
   const [myUsers, setMyUsers] = useState(["aditya", "mitesh", "DJ"]);
@@ -40,6 +42,8 @@ function App() {
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="/useref-hook-2" element={<UseRefHook2 />} />
+        <Route exact path="/useref-hook-1" element={<UseRefHook1 />} />
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/login" element={<Login />} />

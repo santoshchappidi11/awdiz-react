@@ -68,7 +68,7 @@ const Profile = () => {
   return (
     <div id="profile-main">
       <form onSubmit={submitTheUserDetails}>
-      <div id="profile-header">
+        <div id="profile-header">
           <h3>Profile</h3>
         </div>
         <div className="fields">
